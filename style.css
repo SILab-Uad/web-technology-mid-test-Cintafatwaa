@@ -24,4 +24,10 @@ h1 {
     color: #4a4a4a; /* Header color */
 }
 
+button {
+    background-color: rgb(175, 223, 238);
+    padding: 10px;
+    border-radius: 7px;
+}
+
 /* Add more styles here as needed */
