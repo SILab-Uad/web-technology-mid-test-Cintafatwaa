@@ -59,3 +59,6 @@ copybtnDOM.addEventListener('click',() =>{
     const password = resultDOM.innerText;
 })
 module.exports = {generatePassword};
+if (typeof document !== 'undefined') {
+    const element = document.getElementById('myElement');
+}
