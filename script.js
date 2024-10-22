@@ -8,7 +8,7 @@ const generateBtn = document.getElementById('generateBtn');
 const copybtnDOM = document.getElementById('copyBtn');
 const resultDOM = document.getElementById('passwordOutput');
 
-function generatePassword(length, {includeUppercase, includeLowercase, includeNumbers, includeSpecialChars}) {
+function generatePassword(length, options) {
     // Character sets for password generation
     const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -18,14 +18,14 @@ function generatePassword(length, {includeUppercase, includeLowercase, includeNu
     // TODO: Create a variable for the character set based on selected options
     let charPool = '';
 
-    if (includeUppercase) charPool += uppercase;
-    if (includeLowercase) charPool += lowercase;
-    if (includeNumbers) charPool += numbers;
-    if (includeSpecialChars) charPool += specialChars;
+    if (options.includeUppercase) charPool += uppercase;
+    if (options.includeLowercase) charPool += lowercase;
+    if (options.includeNumbers) charPool += numbers;
+    if (options.includeSpecialChars) charPool += specialChars;
 
     if (charPool === '') {
         throw new Error('At least one character type must be selected.');
-    }
+    };
 
     // TODO: Generate the password based on the selected criteria
     let password = '';
@@ -34,7 +34,7 @@ function generatePassword(length, {includeUppercase, includeLowercase, includeNu
         password += randomChar;
     }
     return password;
-}
+};
 
 // TODO: Add event listener to the button to call generatePassword and display the output
 
