@@ -8,7 +8,7 @@ const generateBtn = document.getElementById('generateBtn');
 const copybtnDOM = document.getElementById('copyBtn');
 const resultDOM = document.getElementById('passwordOutput');
 
-function generatePassword(length, options) {
+export const generatePassword = (length, options) {
     // Character sets for password generation
     const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowercase = "abcdefghijklmnopqrstuvwxyz";
