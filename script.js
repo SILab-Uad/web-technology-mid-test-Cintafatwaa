@@ -58,3 +58,4 @@ generateBtn.addEventListener('click', (e) => {
 copybtnDOM.addEventListener('click',() =>{
     const password = resultDOM.innerText;
 })
+module.exports = {generatePassword};
