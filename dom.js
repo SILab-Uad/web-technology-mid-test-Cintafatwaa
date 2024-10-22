@@ -1,4 +1,4 @@
-import { generatePassword } from './script.js';
+
 // Dont change anything in this file
 
 document.getElementById('generateBtn').addEventListener('click', () => {
