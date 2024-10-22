@@ -38,22 +38,27 @@ export const generatePassword = (length, options) {
 
 // TODO: Add event listener to the button to call generatePassword and display the output
 
-generateBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const length = parseInt(lengthDOM.value);
-    const includeUppercase = uppercaseDOM.checked;
-    const includeLowercase = lowercaseDOM.checked;
-    const includeNumbers = numbersDOM.checked;
-    const includeSpecialChars = symbolsDOM.checked;
-
-    try{
-        const password = generatePassword(length, includeUppercase, includeLowercase, includeNumbers, includeSpecialChars);
-        resultDOM.innerText = password;
-    } catch (error){
-        resultDOM.innerText = error.message;
-    }
-});
-
+function handleGeneratePassword() {
+    const length = parseInt(document.getElementById("length").value);
+    const options = {
+      includeUppercase: document.getElementById("includeUppercase").checked,
+      includeLowercase: document.getElementById("includeLowercase").checked,
+      includeNumbers: document.getElementById("includeNumbers").checked,
+      includeSpecialChars: document.getElementById("includeSpecialChars").checked,
+    };
+  
+    try {
+          const password = generatePassword(length, options);
+          document.getElementById("passwordOutput").textContent = password;
+      } catch (error) {
+          alert(error.message); 
+      }
+  
+    // TODO: Add event listener to the button to call generatePassword and display the output
+  
+    const password = generatePassword(length, options);
+    document.getElementById("passwordOutput").textContent = password;
+  }
 // BONUS: Implement the copy to clipboard functionality
 copybtnDOM.addEventListener('click',() =>{
     const password = resultDOM.innerText;
